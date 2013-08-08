@@ -6,12 +6,29 @@ header
   text-align: center
 
   h1
+    display: inline-block
+    padding: 0 1em
+    background: url("/assets/logo.png") no-repeat right
+
     font-size: 64pt
     font-weight: 300
     text-transform: lowercase
+    letter-spacing: -4pt
+    word-spacing: -4pt
+    width: auto
+
+  h1 a
+    color: $text-color
+
+    &:hover
+      color: $text-color
+      text-decoration: none
 
   p
     @extend .lead
+    @include heading-font
+
+    font-weight: normal
 
     em
       font-style: normal
@@ -33,3 +50,6 @@ header
 
 #register-link
   @include primary-button
+
+#logout-link
+  @include negative-button

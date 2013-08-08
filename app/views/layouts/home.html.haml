@@ -1,11 +1,8 @@
 - content_for :header do
   %header
-    %h1
-      InstaPie
-      = image_tag('logo.png')
+    %h1= link_to('Insta Pie', http_url('root'))
 
     %p
-      InstaPie makes it fun to <em>settle arguments</em> and <em>make decisions</em> by getting your
-      friends to weigh in.
+      makes it fun to <em>settle arguments</em> and <em>make decisions</em>
 
 = render(:template => 'layouts/application')

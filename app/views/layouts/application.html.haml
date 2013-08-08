@@ -8,9 +8,12 @@
     = csrf_meta_tags
 
   %body
-    = yield(:header)
-
     %main
+      = yield(:header)
+
+      - if flash[:notice]
+        #notice= flash[:notice]
+
       = yield
 
     = query_diet_widget

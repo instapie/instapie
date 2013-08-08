@@ -1,15 +1,15 @@
 @import url("http://fonts.googleapis.com/css?family=Josefin+Sans:300,400")
 
-$pink: #d93a62
-$green: #5e8f46
-$teal: #7ecab7
+$pink:   #d93a62
+$green:  #5e8f46
+$teal:   #7ecab7
 $yellow: #f3e795
 
 $brand-primary: $pink
 $brand-success: $green
-$brand-info: $teal
+$brand-info:    $teal
 $brand-warning: $yellow
-$brand-danger: darken($pink, 10%)
+$brand-danger:  darken($pink, 10%)
 
 $font-size-base: 20px
 
@@ -34,7 +34,10 @@ input[type="submit"]
   @include primary-button
 
 button, a.action
-  @include neutral-button
+  @include positive-button
 
 a.back
-  @include negative-button
+  @include neutral-button
+
+#notice
+  @include alert

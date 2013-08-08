@@ -1,11 +1,27 @@
+@mixin heading-font
+  font-family: $headings-font-family
+
+@mixin button-base
+  @extend .btn
+  padding-left: 16px
+  padding-right: 16px
+  border-radius: 24px
+
 @mixin primary-button
-  @extend .btn, .btn-primary
+  @include button-base
+  @extend .btn-primary
 
 @mixin positive-button
-  @extend .btn, .btn-success
+  @include button-base
+  @extend .btn-success
 
 @mixin neutral-button
-  @extend .btn, .btn-info
+  @include button-base
+  @extend .btn-info
 
 @mixin negative-button
-  @extend .btn, .btn-warning
+  @include button-base
+  @extend .btn-warning
+
+@mixin alert
+  @extend .alert, .alert-info
