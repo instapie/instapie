@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-InstapieRails::Application.config.secret_key_base = '57628a176ede360d90abb596e0ba8cffbc45fdadc660bccfc573d66fd3e2e056a096fea161fb4c1b96fcee43696c8686889b245f0cfe2dd2cc1a28e40da644ef'
+InstaPie::Application.config.secret_key_base = '57628a176ede360d90abb596e0ba8cffbc45fdadc660bccfc573d66fd3e2e056a096fea161fb4c1b96fcee43696c8686889b245f0cfe2dd2cc1a28e40da644ef'

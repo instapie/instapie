@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-InstapieRails::Application.load_tasks
+InstaPie::Application.load_tasks
