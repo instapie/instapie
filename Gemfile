@@ -39,6 +39,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :development do
+  gem 'debugger'
   gem 'query_diet'
 end
 
@@ -54,11 +55,8 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Use thin as the app server
+gem 'thin'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
