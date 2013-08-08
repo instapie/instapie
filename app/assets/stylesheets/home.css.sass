@@ -1,6 +1,8 @@
 @import 'common'
 
 header
+  @extend .row
+
   text-align: center
 
   h1
@@ -21,9 +23,13 @@ header
       &:nth-child(even)
         color: $green
 
-// Temporary stuff
-.samples
+#session
   @extend .row
 
-  .buttons, .forms
-    @extend .col-lg-6, [class^="col-lg-"]
+  text-align: center
+
+#login-link
+  @include neutral-button
+
+#register-link
+  @include primary-button

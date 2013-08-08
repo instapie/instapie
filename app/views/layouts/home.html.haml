@@ -1,0 +1,11 @@
+- content_for :header do
+  %header
+    %h1
+      InstaPie
+      = image_tag('logo.png')
+
+    %p
+      InstaPie makes it fun to <em>settle arguments</em> and <em>make decisions</em> by getting your
+      friends to weigh in.
+
+= render(:template => 'layouts/application')

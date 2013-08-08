@@ -13,13 +13,13 @@ $brand-danger: darken($pink, 10%)
 
 $font-size-base: 20px
 
+$headings-font-family: 'Josefin Sans', Helvetica, Arial, sans-serif
+
 @import "twitter/bootstrap"
+@import "mixins"
 
 main
   @extend .container
-
-h1, h2, h3
-  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif
 
 table
   @extend .table, .table-hover
@@ -30,8 +30,11 @@ form .field
   input[type="text"], input[type="password"], textarea, select
     @extend .form-control
 
-button, input[type="submit"]
-  @extend .btn
-
 input[type="submit"]
-  @extend .btn-primary
+  @include primary-button
+
+button, a.action
+  @include neutral-button
+
+a.back
+  @include negative-button
