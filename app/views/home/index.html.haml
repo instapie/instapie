@@ -1,0 +1,38 @@
+%header
+  %h1
+    InstaPie
+    = image_tag('logo.png')
+
+  %p
+    InstaPie makes it fun to <em>settle arguments</em> and <em>make decisions</em> by getting your
+    friends to weigh in.
+
+%section.samples
+  .buttons
+    = button_tag('Primary', :class => 'btn-primary')
+    = button_tag('Success', :class => 'btn-success')
+    = button_tag('Info', :class => 'btn-info')
+    = button_tag('Warning', :class => 'btn-warning')
+    = button_tag('Danger', :class => 'btn-danger')
+
+  .forms
+    = form_tag do
+      %fieldset
+        .field
+          = label_tag(:name)
+          = text_field_tag(:name)
+
+        .field
+          = label_tag(:password)
+          = password_field_tag(:password)
+
+        .field
+          = label_tag(:bio)
+          = text_area_tag(:bio)
+
+        .field
+          = label_tag(:gender)
+          = select_tag(:gender, options_for_select(['Male', 'Female']))
+
+        .actions
+          = submit_tag('Submit')

@@ -1,9 +1,29 @@
+@import 'common'
+
 header
-  width: 960px
-  margin: auto
   text-align: center
 
   h1
     font-size: 48pt
     font-weight: 300
     text-transform: lowercase
+
+  p
+    @extend .lead
+
+    em
+      font-style: normal
+      font-weight: bold
+
+      &:nth-child(odd)
+        color: $pink
+
+      &:nth-child(even)
+        color: $green
+
+// Temporary stuff
+.samples
+  @extend .row
+
+  .buttons, .forms
+    @extend .col-lg-6, [class^="col-lg-"]

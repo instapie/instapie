@@ -1,4 +1,37 @@
 @import url("http://fonts.googleapis.com/css?family=Josefin+Sans:300,400")
 
+$pink: #d93a62
+$green: #5e8f46
+$teal: #7ecab7
+$yellow: #f3e795
+
+$brand-primary: $pink
+$brand-success: $green
+$brand-info: $teal
+$brand-warning: $yellow
+$brand-danger: darken($pink, 10%)
+
+$font-size-base: 20px
+
+@import "twitter/bootstrap"
+
+main
+  @extend .container
+
 h1, h2, h3
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif
+
+table
+  @extend .table, .table-hover
+
+form .field
+  @extend .form-group
+
+  input[type="text"], input[type="password"], textarea, select
+    @extend .form-control
+
+button, input[type="submit"]
+  @extend .btn
+
+input[type="submit"]
+  @extend .btn-primary
