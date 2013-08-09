@@ -1,0 +1,14 @@
+@import 'common'
+
+#stage
+  @include two-column
+
+  .pie
+    &:before
+      @extend h3
+      display: block
+      content: '(PLACEHOLDER)'
+      text-align: center
+
+  .answers
+    @include list-view(div)

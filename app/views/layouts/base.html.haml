@@ -1,0 +1,19 @@
+!!! 5
+%html
+
+  %head
+    %title InstaPie
+    = stylesheet_link_tag("application", media: "all", "data-turbolinks-track" => true)
+    = javascript_include_tag("application", "data-turbolinks-track" => true)
+    = csrf_meta_tags
+
+  %body
+    %main
+      = yield(:header)
+
+      - if flash[:notice]
+        #notice= flash[:notice]
+
+      = yield
+
+    = query_diet_widget

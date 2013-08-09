@@ -1,6 +1,12 @@
-- content_for :header do
-  %header
-    %h1= @question.question
+%h1.question= @question.question
+
+#stage
+  .pie
+    %canvas(height="400" width="400")
+
+  .answers
+    - @question.options.each do |option|
+      .answer= option.option
 
 .actions
   = back_link(http_url('root'))

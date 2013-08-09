@@ -1,10 +1,23 @@
+// ----- Typography -----
+
 @mixin heading-font
   font-family: $headings-font-family
+
+// ----- Layout -----
+
+@mixin two-column
+  @extend .row
+
+  > *
+    @extend .col-lg-6
+
+// ----- Buttons -----
 
 @mixin button-base
   @extend .btn
 
   font-family: $label-font
+  font-weight: normal
   padding-left: 16px
   padding-right: 16px
   border-radius: 24px
@@ -25,11 +38,15 @@
   @include button-base
   @extend .btn-warning
 
+// ----- Controls -----
+
 @mixin list-view($childType)
   @extend .list-group
 
   #{$childType}
     @extend .list-group-item
+
+// ----- Callouts? -----
 
 @mixin alert
   @extend .alert, .alert-info
