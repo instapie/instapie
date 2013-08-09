@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   layout 'home'
 
   def index
+    @questions = Question.latest
   end
 
   def login

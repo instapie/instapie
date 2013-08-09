@@ -6,3 +6,12 @@
   - else
     = link_to('Log in', https_url('login'), :id => 'login-link')
     = link_to('Register', https_url('register'), :id => 'register-link')
+
+#promo
+  .screenshot
+    = image_tag('screenshot.png')
+
+  .latest-questions(data-title='Latest Questions')
+    .questions
+      - @questions.each do |question|
+        = link_to(question.question, question)

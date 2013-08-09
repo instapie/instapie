@@ -3,6 +3,8 @@
 
 @mixin button-base
   @extend .btn
+
+  font-family: $label-font
   padding-left: 16px
   padding-right: 16px
   border-radius: 24px
@@ -22,6 +24,12 @@
 @mixin negative-button
   @include button-base
   @extend .btn-warning
+
+@mixin list-view($childType)
+  @extend .list-group
+
+  #{$childType}
+    @extend .list-group-item
 
 @mixin alert
   @extend .alert, .alert-info

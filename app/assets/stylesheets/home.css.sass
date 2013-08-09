@@ -1,8 +1,6 @@
 @import 'common'
 
-header
-  @extend .row
-
+#site-header
   text-align: center
 
   h1
@@ -10,6 +8,7 @@ header
     padding: 0 1em
     background: url("/assets/logo.png") no-repeat right
 
+    font-family: $title-font
     font-size: 64pt
     font-weight: 300
     text-transform: lowercase
@@ -28,6 +27,7 @@ header
     @extend .lead
     @include heading-font
 
+    font-family: $title-font
     font-weight: normal
 
     em
@@ -41,8 +41,7 @@ header
         color: $green
 
 #session
-  @extend .row
-
+  font-family: $label-font
   text-align: center
 
 #login-link
@@ -53,3 +52,30 @@ header
 
 #logout-link
   @include negative-button
+
+#promo
+  @extend .row
+
+  margin-top: 14px
+
+  .screenshot, .latest-questions
+    @extend .col-lg-6
+
+  .screenshot
+    text-align: center
+
+    &:before
+      @extend h3
+      display: block
+      content: "(PLACEHOLDER)"
+
+  .latest-questions:before
+    @extend h1
+    display: block
+    content: attr(data-title)
+
+  .questions
+    @include list-view(a)
+
+    a
+      color: #3a87ad

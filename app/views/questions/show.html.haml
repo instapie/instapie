@@ -1,0 +1,6 @@
+- content_for :header do
+  %header
+    %h1= @question.question
+
+.actions
+  = back_link(http_url('root'))

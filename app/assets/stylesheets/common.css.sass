@@ -1,10 +1,17 @@
-@import url("http://fonts.googleapis.com/css?family=Josefin+Sans:300,400")
+@import url("http://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Source+Sans+Pro")
 
+// My own variables
 $pink:   #d93a62
 $green:  #5e8f46
 $teal:   #7ecab7
 $yellow: #f3e795
+$blue:   #3a87ad
 
+$title-font:   "Josefin Sans", Helvetica, Arial, sans-serif
+$heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif
+$label-font:   "Source Sans Pro", sans-serif
+
+// Overriding Bootstrap variables
 $brand-primary: $pink
 $brand-success: $green
 $brand-info:    $teal
@@ -13,7 +20,8 @@ $brand-danger:  darken($pink, 10%)
 
 $font-size-base: 20px
 
-$headings-font-family: 'Josefin Sans', Helvetica, Arial, sans-serif
+$font-family-sans-serif: $label-font
+$headings-font-family: $heading-font
 
 @import "twitter/bootstrap"
 @import "mixins"
