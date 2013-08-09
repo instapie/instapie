@@ -2,14 +2,17 @@ class HomeController < ApplicationController
   layout 'home'
 
   def index
-    render
   end
 
   def login
-    render
   end
 
   def register
-    render
+  end
+
+  def logout
+    session.delete(:user_id)
+    flash[:notice] = 'Successfully logged out.'
+    redirect_to(root_path)
   end
 end

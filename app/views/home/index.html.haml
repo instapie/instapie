@@ -1,3 +1,8 @@
 #session
-  = link_to('Log in', login_path, :id => 'login-link')
-  = link_to('Register', register_path, :id => 'register-link')
+  - if logged_in?
+    = "Logged in as #{current_user.name}"
+    = link_to('Log out', logout_url, :id => 'logout-link')
+
+  - else
+    = link_to('Log in', https_url('login'), :id => 'login-link')
+    = link_to('Register', https_url('register'), :id => 'register-link')

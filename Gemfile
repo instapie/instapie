@@ -38,6 +38,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Use cheapskate for bridging th HTTP/HTTPS divide during login & registration
+gem 'cheapskate'
+
 group :development do
   gem 'debugger'
   gem 'query_diet'

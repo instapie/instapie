@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808132045) do
+ActiveRecord::Schema.define(version: 20130808162203) do
 
   create_table "answers", force: true do |t|
     t.integer  "user_id"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20130808132045) do
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
+  create_table "single_use_logins", force: true do |t|
+    t.integer "user_id"
+    t.string  "token"
+  end
+
+  add_index "single_use_logins", ["token"], name: "index_single_use_logins_on_token"
+
+  create_table "single_use_notices", force: true do |t|
+    t.string "message"
+    t.string "token"
+  end
+
+  add_index "single_use_notices", ["token"], name: "index_single_use_notices_on_token"
 
   create_table "users", force: true do |t|
     t.string   "email",                       null: false
