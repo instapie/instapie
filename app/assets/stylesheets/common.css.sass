@@ -8,7 +8,7 @@ $yellow: #f3e795
 $blue:   #3a87ad
 
 $title-font:   "Josefin Sans", Helvetica, Arial, sans-serif
-$heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif
+$heading-font: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
 $label-font:   "Source Sans Pro", sans-serif
 
 // Overriding Bootstrap variables
@@ -44,11 +44,14 @@ form .field
   input[type="text"], input[type="password"], textarea, select
     @extend .form-control
 
+  input:nth-child(n+2)
+    margin-top: 14px
+
 input[type="submit"]
   @include primary-button
 
 button, a.action
-  @include positive-button
+  @include primary-button
 
 a.back
   @include neutral-button

@@ -2,7 +2,7 @@
 
 #site-header,
 #page-header
-  text-align: center
+  @extend .text-center
 
   h1
     display: inline-block
@@ -51,8 +51,8 @@ nav
     @extend .text-muted, .pull-right
 
 #session
+  @extend .text-center
   font-family: $label-font
-  text-align: center
 
 #login-link
   @include neutral-button
