@@ -75,6 +75,12 @@
 
 // ----- Miscellaneous -----
 
+@mixin blue-link
+  color: $blue
+
+  &:hover
+    color: lighten($blue, 20%)
+
 @mixin bounds($top, $bottom, $left, $right)
   top: $top
   bottom: $bottom
@@ -100,6 +106,9 @@
 @mixin trans($opacity)
   opacity: $opacity
   filter: alpha(opacity=($opacity * 100))
+
+@mixin padded
+  padding: $padding-base-vertical $padding-base-horizontal
 
 @mixin band($height)
   position: absolute
