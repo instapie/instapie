@@ -14,6 +14,9 @@
       - if flash[:notice]
         #notice= flash[:notice]
 
+      - if flash[:error]
+        #error= flash[:error]
+
       = yield
 
     = query_diet_widget
