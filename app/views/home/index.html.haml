@@ -13,3 +13,6 @@
         = link_to(question, :class => 'question') do
           = question.question
           %span.answer-count= question.answers_count
+
+    .actions
+      = action_link('Ask a Question', http_url('new_question'))
