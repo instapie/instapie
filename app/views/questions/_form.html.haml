@@ -1,0 +1,16 @@
+= form_for(@question) do |f|
+  .field
+    = f.label(:question)
+    = f.text_field(:question)
+
+  .field
+    = f.label(:description)
+    = f.text_area(:description)
+
+  .field
+    = label_tag(:options)
+    - 4.times do
+      = text_field_tag(:'options[][option]')
+
+  .actions
+    = f.submit('Ask Question')
