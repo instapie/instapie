@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def meta_viewport_tag
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0" />'.html_safe
+  end
+
   def http_url(route)
     self.send(:"#{route}_url", url_options_for_protocol(:http))
   end
