@@ -11,6 +11,20 @@
   > *
     @extend .col-lg-6
 
+// ----- Navigation -----
+
+@mixin nav-bar
+  @extend .navbar
+
+  ul
+    @extend .nav, .navbar-nav
+
+  p
+    @extend .navbar-text
+
+  button
+    @extend .navbar-btn
+
 // ----- Buttons -----
 
 @mixin button-base
@@ -50,3 +64,6 @@
 
 @mixin alert
   @extend .alert, .alert-info
+
+@mixin error-alert
+  @extend .alert, .alert-danger

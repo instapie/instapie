@@ -1,6 +1,7 @@
 @import 'common'
 
-#site-header
+#site-header,
+#page-header
   text-align: center
 
   h1
@@ -23,6 +24,7 @@
       color: $text-color
       text-decoration: none
 
+#site-header
   p
     @extend .lead
     @include heading-font
@@ -40,6 +42,12 @@
       &:nth-child(even)
         color: $green
 
+nav
+  @include nav-bar
+
+  p:last-child
+    @extend .text-muted, .pull-right
+
 #session
   font-family: $label-font
   text-align: center
@@ -49,9 +57,6 @@
 
 #register-link
   @include primary-button
-
-#logout-link
-  @include negative-button
 
 #promo
   @extend .row
