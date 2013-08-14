@@ -4,13 +4,8 @@
   @include two-column
 
   .pie
-    text-align: center
-
-    &:before
-      @extend h3
-      display: block
-      content: '(PLACEHOLDER)'
-      text-align: center
+    @include placeholder
+    @extend .text-center
 
   .answers
     @include list-view(div)

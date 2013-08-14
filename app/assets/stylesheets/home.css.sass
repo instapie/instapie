@@ -61,20 +61,13 @@ nav
   @include primary-button
 
 #promo
-  @extend .row
+  @include two-column
 
   margin-top: 14px
 
-  .screenshot, .latest-questions
-    @extend .col-lg-6
-
   .screenshot
-    text-align: center
-
-    &:before
-      @extend h3
-      display: block
-      content: "(PLACEHOLDER)"
+    @include placeholder
+    @extend .text-center
 
   .latest-questions:before
     @extend h1

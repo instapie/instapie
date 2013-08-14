@@ -72,3 +72,60 @@
 
 @mixin count-badge
   @extend .badge, .pull-right
+
+// ----- Miscellaneous -----
+
+@mixin bounds($top, $bottom, $left, $right)
+  top: $top
+  bottom: $bottom
+  left: $left
+  right: $right
+
+@mixin abs($top, $bottom, $left, $right)
+  @include bounds($top, $bottom, $left, $right)
+  position: absolute
+  display: block
+
+@mixin fixed($top, $bottom, $left, $right)
+  @include bounds($top, $bottom, $left, $right)
+  position: fixed
+  display: block
+
+@mixin fill-parent
+  @include abs(0, 0, 0, 0)
+
+@mixin fill-screen
+  @include fixed(0, 0, 0, 0)
+
+@mixin trans($opacity)
+  opacity: $opacity
+  filter: alpha(opacity=($opacity * 100))
+
+@mixin band($height)
+  position: absolute
+  top: 50%
+  left: 0
+  right: 0
+  height: $height
+  margin-top: -($height / 2)
+  text-align: center
+
+@mixin placeholder
+  position: relative
+  z-index: -1
+
+  &:before
+    @include fill-parent
+    @include trans(0.5)
+
+    content: ""
+    background-color: #bbb
+    z-index: 1
+
+  &:after
+    @include band(28px)
+
+    content: "(PLACEHOLDER)"
+    font-size: 28px
+    line-height: 28px
+    color: #000
