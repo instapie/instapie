@@ -1,12 +1,19 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
-dan = User.create!({
-  :name => 'Dan',
-  :email => 'daniel.tao@gmail.com',
-  :password => 'horsey',
-  :password_confirmation => 'horsey'
-})
+def create_user(name, password)
+  User.create!({
+    :name => name,
+    :email => "#{name.downcase}@instapie.net",
+    :password => password,
+    :password_confirmation => password
+  })
+end
+
+dan    = create_user('Dan', 'horsey')
+adam   = create_user('Adam', 'donkey')
+lauren = create_user('Lauren', 'monkey')
+happy  = create_user('Happy', 'dolphin')
 
 question_data = [
   ["Who's your favorite Avenger?", [
@@ -40,9 +47,17 @@ question_data = [
   ]]
 ]
 
+users = User.all
+
 question_data.each do |question, options|
-  q = dan.questions.create!(:question => question)
-  options.each do |option|
-    q.options.create!(:option => option)
+  asker = users.sample
+
+  q = asker.ask_question(question, nil, options)
+  puts "#{asker.name} asked: #{question}"
+
+  (users - [asker]).each do |user|
+    o = q.options.sample
+    user.answer_question(q, o.id)
+    puts "  #{user.name} answered: #{o.option}"
   end
 end
