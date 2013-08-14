@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout :layout_for_user
 
   def index
-    @questions = Question.latest
+    @questions = Question.latest(30)
   end
 
   def login

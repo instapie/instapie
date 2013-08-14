@@ -1,0 +1,13 @@
+%table.questions
+  %thead
+    %tr.fields
+      %th Question
+      %th User
+      %th Answers
+
+  %tbody
+    - @questions.each do |question|
+      %tr.question
+        %td= link_to(question.question, question)
+        %td= question.user.try(:name)
+        %td= question.answers_count

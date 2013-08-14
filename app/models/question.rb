@@ -7,5 +7,5 @@ class Question < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :question
 
-  scope :latest, -> { order(:id => :desc) }
+  scope :latest, -> (count) { order(:id => :desc).limit(count) }
 end
