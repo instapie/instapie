@@ -9,7 +9,7 @@ $yellow: #f3e795
 $blue:   #3a87ad
 
 $title-font:   "Josefin Sans", Helvetica, Arial, sans-serif
-$heading-font: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+$heading-font: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif
 $label-font:   "Source Sans Pro", sans-serif
 
 // ----- Overriding Bootstrap variables -----
@@ -54,6 +54,9 @@ header
 
 table
   @extend .table, .table-hover
+
+  tr td a
+    color: $blue
 
 form .field
   @extend .form-group
