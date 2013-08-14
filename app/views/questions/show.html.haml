@@ -6,7 +6,9 @@
 
   .answers
     - @question.options.each do |option|
-      .answer= option.option
+      .answer
+        = option.option
+        %span.vote-count= option.answers_count
 
 .actions
   = back_link(http_url('root'))

@@ -10,4 +10,6 @@
   .latest-questions(data-title='Latest Questions')
     .questions
       - @questions.each do |question|
-        = link_to(question.question, question)
+        = link_to(question, :class => 'question') do
+          = question.question
+          %span.answer-count= question.answers_count

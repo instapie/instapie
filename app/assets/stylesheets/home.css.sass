@@ -25,6 +25,8 @@
       text-decoration: none
 
 #site-header
+  @extend .page-header
+
   p
     @extend .lead
     @include heading-font
@@ -82,5 +84,8 @@ nav
   .questions
     @include list-view(a)
 
-    a
+    .question
       color: #3a87ad
+
+      .answer-count
+        @include count-badge
