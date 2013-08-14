@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/anjlab/bootstrap-rails.git
-  revision: fe940d3f99e22a2ff1d05ba04de909ee9d64f984
+  remote: https://github.com/anjlab/bootstrap-rails.git
+  revision: 507323616c5a3e2fe6d9e60cc21cce7d58a639f5
   branch: 3.0.0
   specs:
-    anjlab-bootstrap-rails (3.0.0.rc1)
+    anjlab-bootstrap-rails (3.0.0.rc2)
       railties (>= 3.0)
       sass (>= 3.2)
 
@@ -35,7 +35,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.0)
-    atomic (1.1.12)
+    atomic (1.1.13)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
     cheapskate (0.0.1)
@@ -73,7 +73,7 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
-    i18n (0.6.4)
+    i18n (0.6.5)
     jbuilder (1.5.0)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -86,7 +86,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     minitest (4.7.5)
-    multi_json (1.7.8)
+    multi_json (1.7.9)
     polyglot (0.3.3)
     query_diet (0.5.2)
     rack (1.5.2)
@@ -109,10 +109,10 @@ GEM
     randy (0.0.1)
     rdoc (3.12.2)
       json (~> 1.4)
-    rspec-core (2.14.4)
-    rspec-expectations (2.14.0)
+    rspec-core (2.14.5)
+    rspec-expectations (2.14.1)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.2)
+    rspec-mocks (2.14.3)
     rspec-rails (2.14.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
