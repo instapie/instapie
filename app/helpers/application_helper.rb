@@ -15,6 +15,10 @@ module ApplicationHelper
     link_to(text, url, options.merge(:class => 'action'))
   end
 
+  def js_link(text, options={})
+    link_to(text, 'javascript:void(0);', options)
+  end
+
   def back_link(url, options={})
     link_to('Back', url, options.merge(:class => 'back'))
   end

@@ -9,8 +9,11 @@
 
   .field
     = label_tag(:options)
-    - 4.times do
+    - 2.times do
       = text_field_tag(:'options[][option]')
+    - 2.times do
+      = text_field_tag(:'options[][option]', nil, :placeholder => 'Optional')
+    = js_link('Add another option', :class => 'add-option')
 
   .actions
     = f.submit('Ask Question')

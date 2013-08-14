@@ -14,8 +14,16 @@ getPieData = (colors) ->
     })
     .toArray()
 
+addNewOptionRow = ->
+  field = $(this).closest('.field')
+  lastOptionRow = field.find('input[type="text"]:last-of-type')
+  lastOptionRow.clone().val('').insertBefore(this)
+
 init = ->
   colors = getColorArray()
+
+  # Wire up the 'Add another option' link
+  $('.add-option').on('click', addNewOptionRow)
 
   # Highlight table rows
   answers = getArray(document.querySelectorAll('.answers .answer'))
