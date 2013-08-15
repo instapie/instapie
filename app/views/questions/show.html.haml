@@ -12,7 +12,7 @@
       - @question.options.each do |option|
         .answer
           = option.option
-          %span.vote-count= option.answers_count
+          %span.vote-count= blank_if_zero(option.answers_count)
 
     .actions
       - if !logged_in?

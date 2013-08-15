@@ -30,4 +30,8 @@ module ApplicationHelper
   def hidden_if(condition)
     condition ? { :style => 'display: none;' } : {}
   end
+
+  def blank_if_zero(value)
+    value == 0 ? '' : value
+  end
 end
