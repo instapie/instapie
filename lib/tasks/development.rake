@@ -16,4 +16,6 @@ namespace :dev do
       sh "SESSION_SECRET=#{SESSION_SECRET} rails server -p 8000 -P tmp/pids/https-server.pid"
     end
   end
+
+  task :server => 'server:http'
 end
