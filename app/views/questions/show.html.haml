@@ -1,4 +1,7 @@
 %h1
+  .asker
+    = user_image_tag(@question.user)
+    = "#{@question.user.name} asked:"
   .question= @question.question
   %small
     - if @answer.present?
@@ -19,6 +22,9 @@
         .answer
           = option.option
           %span.vote-count= blank_if_zero(option.answers_count)
+          %section.voters
+            - option.answers.each do |answer|
+              = small_user_image_tag(answer.user)
 
     .actions
       - if !logged_in?
