@@ -2,7 +2,7 @@
   .question= @question.question
   %small
     - if @answer.present?
-      = "You answered #{@answer.option.option} on #{@answer.updated_at}"
+      = "You answered #{@answer.option.option} on #{short_date_format(@answer.updated_at)}"
     - elsif @question.answers_count > 0
       = "#{pluralize(@question.answers_count, 'person')}  responded so far."
 
@@ -22,6 +22,6 @@
 
     .actions
       - if !logged_in?
-        %p= "You must #{link_to('log in', https_url('login'))} to vote!"
+        %p!= "You must #{link_to('log in', https_url('login'))} to vote!"
       - else
         = render(:partial => 'voting_form')
