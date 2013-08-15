@@ -1,4 +1,10 @@
-%h1.question= @question.question
+%h1
+  .question= @question.question
+  %small
+    - if @answer.present?
+      = "You answered #{@answer.option.option} on #{@answer.updated_at}"
+    - elsif @question.answers_count > 0
+      = "#{pluralize(@question.answers_count, 'person')}  responded so far."
 
 #stage
   .pie
