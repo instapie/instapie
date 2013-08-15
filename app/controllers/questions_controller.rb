@@ -30,6 +30,8 @@ class QuestionsController < ApplicationController
   end
 
   def options_params
-    params.require(:options).map { |option| option[:option] }
+    options = params.require(:options).map { |option| option[:option] }.reject(&:blank?)
+    raise_error('You must supply at least 2 options!') if options.length < 2
+    options
   end
 end
