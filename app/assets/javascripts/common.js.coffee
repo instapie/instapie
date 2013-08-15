@@ -25,6 +25,11 @@ window.getArray = (collection) ->
 window.extract = (string, pattern) ->
   string.match(pattern)[1]
 
+window.combine = ->
+  functions = getArray(arguments)
+  return ->
+    Lazy(functions).each (fn) -> fn()
+
 # ----- Global behavior -----
 
 init = ->
@@ -32,6 +37,7 @@ init = ->
     target = $(this).data('target')
     $(target).show()
 
+refresh = ->
   revealAlerts()
 
 revealAlerts = ->
@@ -44,5 +50,5 @@ hideAlerts = ->
 hideAlertsAfterDelay = ->
   setTimeout(hideAlerts, 3000)
 
-$(document).ready(init)
-$(document).on('page:change', revealAlerts)
+$(document).ready(combine(init, refresh))
+$(document).on('page:change', refresh)

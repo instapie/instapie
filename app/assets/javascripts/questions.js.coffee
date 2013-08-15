@@ -20,22 +20,25 @@ addNewOptionRow = ->
   lastOptionRow.clone().val('').insertBefore(this)
 
 init = ->
-  colors = getColorArray()
-
   # Wire up the 'Add another option' link
   $('.add-option').on('click', addNewOptionRow)
 
+refresh = ->
+  colors = getColorArray()
+
   # Highlight table rows
-  answers = getArray(document.querySelectorAll('.answers .answer'))
-  Lazy(answers)
-    .select((answer) -> answer.querySelector('.vote-count').textContent != '')
-    .each (answer, i) ->
-      answer.style.borderLeft = '5px solid ' + colors[i % colors.length]
+  answers = document.querySelectorAll('.answers .answer')
+  if answers? and answers.length > 0
+    Lazy(getArray(answers))
+      .select((answer) -> answer.querySelector('.vote-count').textContent != '')
+      .each (answer, i) ->
+        answer.style.borderLeft = '5px solid ' + colors[i % colors.length]
 
   # Draw pie chart
   canvas = document.querySelector('.pie canvas')
-  context = canvas.getContext('2d')
-  new Chart(context).Pie(getPieData(colors), { animation: false })
+  if canvas?
+    context = canvas.getContext('2d')
+    new Chart(context).Pie(getPieData(colors), { animation: false })
 
-$(document).ready(init)
-$(document).on('page:change', init)
+$(document).ready(combine(init, refresh))
+$(document).on('page:change', refresh)
