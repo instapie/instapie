@@ -32,14 +32,17 @@ init = ->
     target = $(this).data('target')
     $(target).show()
 
-  hideAlertsAfterDelay()
+  revealAlerts()
+
+revealAlerts = ->
+  $('#notice, #error').animate { bottom: 0 }, 1000, ->
+    hideAlertsAfterDelay()
 
 hideAlerts = ->
-  $('#notice, #error').slideUp ->
-    $(this).remove()
+  $('#notice, #error').animate { bottom: '-50px' }, 1000
 
 hideAlertsAfterDelay = ->
   setTimeout(hideAlerts, 3000)
 
 $(document).ready(init)
-$(document).on('page:change', hideAlertsAfterDelay)
+$(document).on('page:change', revealAlerts)

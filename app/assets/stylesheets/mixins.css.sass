@@ -1,3 +1,34 @@
+// ----- Helpers -----
+
+@mixin bounds($top, $bottom, $left, $right)
+  top: $top
+  bottom: $bottom
+  left: $left
+  right: $right
+
+@mixin abs($top, $bottom, $left, $right)
+  @include bounds($top, $bottom, $left, $right)
+  position: absolute
+  display: block
+
+@mixin fixed($top, $bottom, $left, $right)
+  @include bounds($top, $bottom, $left, $right)
+  position: fixed
+  display: block
+
+@mixin fill-parent
+  @include abs(0, 0, 0, 0)
+
+@mixin fill-screen
+  @include fixed(0, 0, 0, 0)
+
+@mixin trans($opacity)
+  opacity: $opacity
+  filter: alpha(opacity=($opacity * 100))
+
+@mixin padded
+  padding: $padding-base-vertical $padding-base-horizontal
+
 // ----- Typography -----
 
 @mixin heading-font
@@ -63,10 +94,23 @@
 // ----- Callouts? -----
 
 @mixin alert
-  @extend .alert, .alert-info
+  @include trans(0.75)
+
+  position: fixed
+  bottom: -50px
+  left: 0
+  right: 0
+  height: 50px
+  line-height: 50px
+  text-align: center
+  background-color: #7ecab7
+  color: #fff
+  z-index: 1
 
 @mixin error-alert
-  @extend .alert, .alert-danger
+  @include alert
+
+  background-color: #d93a62
 
 // ----- Flair -----
 
@@ -80,35 +124,6 @@
 
   &:hover
     color: lighten($blue, 20%)
-
-@mixin bounds($top, $bottom, $left, $right)
-  top: $top
-  bottom: $bottom
-  left: $left
-  right: $right
-
-@mixin abs($top, $bottom, $left, $right)
-  @include bounds($top, $bottom, $left, $right)
-  position: absolute
-  display: block
-
-@mixin fixed($top, $bottom, $left, $right)
-  @include bounds($top, $bottom, $left, $right)
-  position: fixed
-  display: block
-
-@mixin fill-parent
-  @include abs(0, 0, 0, 0)
-
-@mixin fill-screen
-  @include fixed(0, 0, 0, 0)
-
-@mixin trans($opacity)
-  opacity: $opacity
-  filter: alpha(opacity=($opacity * 100))
-
-@mixin padded
-  padding: $padding-base-vertical $padding-base-horizontal
 
 @mixin band($height)
   position: absolute
