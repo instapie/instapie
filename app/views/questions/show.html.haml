@@ -4,11 +4,18 @@
   .pie
     %canvas(height="400" width="400")
 
-  .answers
-    - @question.options.each do |option|
-      .answer
-        = option.option
-        %span.vote-count= option.answers_count
+    .actions
+      = back_link(http_url('root'))
 
-.actions
-  = back_link(http_url('root'))
+  .voting
+    .answers
+      - @question.options.each do |option|
+        .answer
+          = option.option
+          %span.vote-count= option.answers_count
+
+    .actions
+      - if !logged_in?
+        %p= "You must #{link_to('log in', https_url('login'))} to vote!"
+      - else
+        = render(:partial => 'voting_form')

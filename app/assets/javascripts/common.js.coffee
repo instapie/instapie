@@ -27,6 +27,13 @@ window.extract = (string, pattern) ->
 
 # ----- Global behavior -----
 
+init = ->
+  $(document).on 'click', '.reveal-link', ->
+    target = $(this).data('target')
+    $(target).show()
+
+  hideAlertsAfterDelay()
+
 hideAlerts = ->
   $('#notice, #error').slideUp ->
     $(this).remove()
@@ -34,5 +41,5 @@ hideAlerts = ->
 hideAlertsAfterDelay = ->
   setTimeout(hideAlerts, 3000)
 
-$(document).ready(hideAlertsAfterDelay)
+$(document).ready(init)
 $(document).on('page:change', hideAlertsAfterDelay)

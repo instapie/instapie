@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answer = current_user.try(:answer_for, @question)
   end
 
   def new
@@ -14,6 +15,20 @@ class QuestionsController < ApplicationController
   def create
     question = current_user.ask_question(*ask_question_params)
     flash[:notice] = "Asked question \"#{question.question}\""
+    redirect_to(question)
+  end
+
+  def vote
+    question = Question.find(params[:id])
+    answer = current_user.answer_for(question)
+
+    if answer.nil?
+      current_user.answer_question(question, params[:option_id])
+    else
+      answer.update_attributes(:option_id => params[:option_id])
+    end
+
+    flash[:notice] = 'Submitted answer!'
     redirect_to(question)
   end
 

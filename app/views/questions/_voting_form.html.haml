@@ -1,0 +1,17 @@
+- if @answer.present?
+  %p
+    != "You already answered <span class='current-answer'>#{@answer.option.option}</span>."
+    = reveal_link('Change your answer?', '.answer-question')
+
+= form_tag(vote_url(@question), hidden_if(@answer.present?).merge(:class => 'answer-question')) do
+  .field
+    = label_tag('Choose your answer')
+    .options
+      - @question.options.each do |option|
+        .option
+          %label
+            = radio_button_tag(:option_id, option.id)
+            = option.option
+
+  .actions
+    = submit_tag('Vote!')

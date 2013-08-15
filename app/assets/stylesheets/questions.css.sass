@@ -6,7 +6,10 @@
   .pie
     @extend .text-center
 
-  .answers
+    .actions
+      @extend .text-left
+
+  .voting .answers
     @include list-view(div)
 
     .answer .vote-count
@@ -18,3 +21,22 @@
 
   // TODO: Figure out if there's a way to avoid this!
   display: inline-block
+
+.current-answer
+  font-weight: bold
+
+.change-answer
+  @include blue-link
+  font-weight: bold
+
+form.answer-question
+  @extend .form-horizontal, .well
+
+  .field > label
+    @extend .col-lg-4
+
+  .options
+    @extend .col-lg-8
+
+    .option
+      @extend .radio

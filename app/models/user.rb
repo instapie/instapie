@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def answer_for(question)
+    self.answers.find_by_question_id(question.id)
+  end
+
   def answer_question(question, option_id)
     question.answers.create!(:user => self, :option_id => option_id)
   end

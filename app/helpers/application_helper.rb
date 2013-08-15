@@ -22,4 +22,12 @@ module ApplicationHelper
   def back_link(url, options={})
     link_to('Back', url, options.merge(:class => 'back'))
   end
+
+  def reveal_link(text, target, options={})
+    js_link(text, options.merge(:class => 'reveal-link', :'data-target' => target))
+  end
+
+  def hidden_if(condition)
+    condition ? { :style => 'display: none;' } : {}
+  end
 end
