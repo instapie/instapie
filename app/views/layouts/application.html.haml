@@ -7,7 +7,10 @@
       %li= link_to('Questions', questions_path)
 
     %p
-      = "Logged in as #{current_user.name}"
-      = link_to('Log out', logout_path, :id => 'logout-link')
+      - if logged_in?
+        = "Logged in as #{current_user.name}"
+        = link_to('Log out', logout_path, :id => 'logout-link')
+      - else
+        = link_to('Log in', https_url('login'))
 
 = render(:template => 'layouts/base')
