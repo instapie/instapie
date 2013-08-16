@@ -26,18 +26,6 @@ InstaPie::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  Cheapskate::CONFIG['HTTPS_HOST'] = 'lvh.me'
 end
-
-URL_OPTIONS = {
-  :http => {
-    :host     => 'localhost',
-    :port     => 3000,
-    :protocol => 'http'
-  },
-
-  :https => {
-    :host     => 'localhost',
-    :port     => 8000,
-    :protocol => 'http'
-  }
-}

@@ -77,16 +77,8 @@ InstaPie::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Login and register pages get served via HTTPS, everything else via HTTP
+  Cheapskate::CONFIG['HTTP_HOST'] = 'beta.instapie.net'
+  Cheapskate::CONFIG['HTTPS_HOST'] = 'instapie2.herokuapp.com'
 end
-
-URL_OPTIONS = {
-  :http => {
-    :host     => 'beta.instapie.net',
-    :protocol => 'http'
-  },
-
-  :https => {
-    :host     => 'instapie2.herokuapp.com',
-    :protocol => 'https'
-  }
-}
