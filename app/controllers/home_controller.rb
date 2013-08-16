@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  force_ssl :if => :ssl_available?, :only => [:login, :register], :domain => Cheapskate::CONFIG['HTTPS_HOST']
+
   layout :layout_for_user
 
   def index
@@ -18,6 +20,10 @@ class HomeController < ApplicationController
   end
 
   private
+
+  def ssl_available?
+    Rails.env.production?
+  end
 
   def layout_for_user
     logged_in? && 'application' || 'home'
