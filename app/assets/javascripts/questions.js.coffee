@@ -20,10 +20,12 @@ addNewOptionRow = ->
   lastOptionRow.clone().val('').insertBefore(this)
 
 init = ->
-  # Wire up the 'Add another option' link
-  $('.add-option').on('click', addNewOptionRow)
 
 refresh = ->
+  # TODO: Refactor this into some sort of general behavior, like maybe based a
+  # data-duplicate class or something
+  $('.add-option').on('click', addNewOptionRow)
+
   colors = getColorArray()
 
   # Highlight table rows
