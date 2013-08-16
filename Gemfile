@@ -41,7 +41,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Use cheapskate for bridging th HTTP/HTTPS divide during login & registration
-gem 'cheapskate', :github => 'dtao/cheapskate'
+gem 'cheapskate', '>= 0.0.2'
 
 group :production do
   gem 'rails_12factor'
