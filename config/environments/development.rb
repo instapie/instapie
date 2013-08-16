@@ -27,3 +27,17 @@ InstaPie::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 end
+
+URL_OPTIONS = {
+  :http => {
+    :host     => 'localhost',
+    :port     => 3000,
+    :protocol => 'http'
+  },
+
+  :https => {
+    :host     => 'localhost',
+    :port     => 8000,
+    :protocol => 'http'
+  }
+}

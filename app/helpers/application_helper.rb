@@ -7,11 +7,11 @@ module ApplicationHelper
   end
 
   def http_url(route)
-    self.send(:"#{route}_url", url_options_for_protocol(:http))
+    self.send(:"#{route}_url", URL_OPTIONS[:http])
   end
 
   def https_url(route)
-    self.send(:"#{route}_url", url_options_for_protocol(:https))
+    self.send(:"#{route}_url", URL_OPTIONS[:https])
   end
 
   def action_link(text, url, options={})
