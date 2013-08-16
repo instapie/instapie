@@ -8,6 +8,14 @@ GIT
       sass (>= 3.2)
 
 GIT
+  remote: git://github.com/dtao/cheapskate.git
+  revision: a56257c5330df7f625f77b950063f4733e9cd6fd
+  specs:
+    cheapskate (0.0.1)
+      rails
+      randy
+
+GIT
   remote: git://github.com/dtao/query_diet.git
   revision: f335cd8fd9b4db145ecb906bb730ba730ea3aadc
   specs:
@@ -114,6 +122,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
+    randy (0.0.1)
     rdoc (3.12.2)
       json (~> 1.4)
     rspec-core (2.14.5)
@@ -168,6 +177,7 @@ PLATFORMS
 DEPENDENCIES
   anjlab-bootstrap-rails!
   bcrypt-ruby (~> 3.0.0)
+  cheapskate!
   coffee-rails (~> 4.0.0)
   debugger
   foreman

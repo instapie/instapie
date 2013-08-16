@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  helper Cheapskate::ApplicationHelper
+
   helper_method :logged_in?, :current_user
 
   rescue_from ActiveRecord::ActiveRecordError, :with => :handle_exception

@@ -8,9 +8,9 @@ InstaPie::Application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  match 'login'    => 'home#login',    :via => [:get, :post]
-  match 'register' => 'home#register', :via => [:get, :post]
-  get 'logout'     => 'home#logout'
+  get 'login'    => 'home#login'
+  get 'register' => 'home#register'
+  get 'logout'   => 'home#logout'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -59,4 +59,6 @@ InstaPie::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  mount Cheapskate::Engine, :at => '/'
 end
