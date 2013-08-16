@@ -8,8 +8,8 @@ gem 'rails', '4.0.0'
 # Use foreman for configuration
 gem 'foreman'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use PostgreSQL as the database for Active Record
+gem 'pg'
 
 # Use HAML for layout
 gem 'haml-rails'
@@ -40,12 +40,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# Use cheapskate for bridging th HTTP/HTTPS divide during login & registration
-gem 'cheapskate'
-
 group :development do
   gem 'debugger'
-  gem 'query_diet'
+  gem 'query_diet', :github => 'dtao/query_diet'
 end
 
 group :test do
@@ -62,6 +59,3 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use thin as the app server
 gem 'thin'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development

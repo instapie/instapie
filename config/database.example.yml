@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: instapie_development
+  username: instapie
+  password: passw0rd
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: instapie_test
+  username: instapie
+  password: passw0rd
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: instapie_production
+  username: instapie
+  password: passw0rd
