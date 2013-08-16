@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
-  force_ssl :if => :ssl_available?, :only => [:login, :register], :domain => Cheapskate::CONFIG['HTTPS_HOST']
+  force_ssl({
+    :if     => :ssl_available?,
+    :only   => [:login, :register],
+    :domain => Cheapskate::CONFIG['HTTPS_HOST']
+  })
 
   layout :layout_for_user
 
